@@ -1,8 +1,11 @@
-'''
-Here, make.R is a main top-level script that
 
-Loads your packages, functions, and other in-memory data.
-Creates the drake plan.
-Calls make().
-'''
+source("R/packages.R")  # loads packages
+source("R/functions.R") # defines the create_plot() function
+source("R/plan.R")      # creates the drake plan
+# options(clustermq.scheduler = "multicore") # optional parallel computing. Also needs parallelism = "clustermq"
+make(
+  plan, # defined in R/plan.R
+  verbose = 2
+)
+
 
